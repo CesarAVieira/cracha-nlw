@@ -20,7 +20,7 @@ main {
     background: url(images/background.svg) no-repeat center/cover;
     width: 100vw;
     min-height: 812px;
-    height: 100vh;
+    height: 100vw;
 }
 
 .container {
@@ -41,6 +41,21 @@ main {
     position: absolute;
     top: -15px;
     z-index: 1;
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 8s linear infinite;
+}
+@-moz-keyframes spin { 
+    100% { -moz-transform: rotate(360deg); } 
+}
+@-webkit-keyframes spin { 
+    100% { -webkit-transform: rotate(360deg); } 
+}
+@keyframes spin { 
+    100% { 
+        -webkit-transform: rotate(360deg); 
+        transform:rotate(360deg); 
+    } 
 }
 
 .avatar > img {
@@ -77,4 +92,8 @@ ul {
     display: flex;
     gap: 0.5rem;
     justify-content: center;
+}
+
+ul li:hover {
+    transform: scale(1.1)
 }
